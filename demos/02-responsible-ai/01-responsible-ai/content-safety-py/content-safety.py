@@ -34,6 +34,8 @@ def analyze_text():
     sexual_result = next(item for item in response.categories_analysis if item.category == TextCategory.SEXUAL)
     violence_result = next(item for item in response.categories_analysis if item.category == TextCategory.VIOLENCE)
 
+    print("text analysis results:")
+
     if hate_result:
         print(f"Hate severity: {hate_result.severity}")
     if self_harm_result:
@@ -79,6 +81,8 @@ def analyze_image():
     sexual_result = next(item for item in response.categories_analysis if item.category == ImageCategory.SEXUAL)
     violence_result = next(item for item in response.categories_analysis if item.category == ImageCategory.VIOLENCE)
 
+    print("image analysis results:")
+
     if hate_result:
         print(f"Hate severity: {hate_result.severity}")
     if self_harm_result:
@@ -89,4 +93,5 @@ def analyze_image():
         print(f"Violence severity: {violence_result.severity}")
 
 if __name__ == "__main__":
+    analyze_text()
     analyze_image()
