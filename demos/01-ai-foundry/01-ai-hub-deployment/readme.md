@@ -18,6 +18,8 @@ winget add Microsoft.Azd
 
 ## Initialize & Deployment
 
+[Azure AI Templates with Azure Developer CLI](https://learn.microsoft.com/en-us/collections/5pq0uompdgje8d?sharingId=ADFFF9D4AD9A0F29&WT_mc.id=aip-114567-cassieb)
+
 Initialize the Azure AI Studio Starter template:
 
 ```bash
