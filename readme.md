@@ -24,7 +24,7 @@ Companion Material for Class Delivery by [Alexander Kastil](https://www.integrat
 
   > Note: Azure Passes can only be used once per e-mail account. Please do not use Azure AD Accounts. A guide on how to use your Azure Pass can be found [here](./tooling/05-AzurePass)
 
-- [Azure AI Foundry Account](https://ai.azure.com/))
+- [Azure AI Foundry Account](https://ai.azure.com/)
 
 ## Contributing
 
