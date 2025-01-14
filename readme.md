@@ -25,9 +25,9 @@ Companion Material for Class Delivery by [Alexander Kastil](https://www.integrat
 
   > Note: Azure Passes can only be used once per e-mail account. Please do not use Azure AD Accounts. A guide on how to use your Azure Pass can be found [here](./tooling/05-AzurePass)
 
-- Copilot Studio License:
+- Azure AI Foundry Account:
 
-    - [Copilot Studio Trial](https://learn.microsoft.com/en-us/microsoft-copilot-studio/sign-up-individual)
+    - [https://ai.azure.com/](https://ai.azure.com/)
 
 ## Contributing
 
