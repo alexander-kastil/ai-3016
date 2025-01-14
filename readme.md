@@ -1,4 +1,4 @@
-# Develop custom copilots with Azure AI Studio
+# Develop Generative AI apps in Azure AI Foundry Portal
 
 Companion Material for Class Delivery by [Alexander Kastil](https://www.integrations.at/kontakt-impressum.aspx) containing:
 
