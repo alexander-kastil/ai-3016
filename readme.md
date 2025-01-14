@@ -3,15 +3,14 @@
 Companion Material for Class Delivery by [Alexander Kastil](https://www.integrations.at/kontakt-impressum.aspx) containing:
 
   - [Instructor Demos](./demos)
-  - [Requirements / tooling](./tooling)
+  - [Requirements / Tooling](./tooling)
     - [Register Azure Pass](./tooling/05-azurepass)
     - [Git & GitHub Basics](./tooling/01-git)
     - [Visual Studio Code Intro](./tooling/02-vscode)
     - [Document Repos using Markdown](./tooling/03-markdown)
     - [Using Azure CLI & Cloud Shell](./tooling/04-cli)
     - [Docker and WSL Setup](./tooling/08-docker-wsl)
-    - [Configure VS Code REST Client Extension](./tooling/07-rest-client)
-  - [Labs](https://learn.microsoft.com/en-us/training/paths/copilot-foundations/)
+  - [Labs](./labs/)
 
 ## Required Cloud Resources
 
@@ -25,9 +24,7 @@ Companion Material for Class Delivery by [Alexander Kastil](https://www.integrat
 
   > Note: Azure Passes can only be used once per e-mail account. Please do not use Azure AD Accounts. A guide on how to use your Azure Pass can be found [here](./tooling/05-AzurePass)
 
-- Azure AI Foundry Account:
-
-    - [https://ai.azure.com/](https://ai.azure.com/)
+- [Azure AI Foundry Account](https://ai.azure.com/))
 
 ## Contributing
 
