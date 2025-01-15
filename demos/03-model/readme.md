@@ -12,19 +12,10 @@
 
 ## Demos
 
-### Classification using Copilot
+- Show LLM Deployment in Azure AI Foundry
 
-```bash
-Vienna: a capital city
-Graz: a local hub
-Bangkog: a capital city
-Krabi: a local hub
-New York: 
-```
+- Consume LLM
 
-### Using Prompty
-
-
-## Labs 
+## Labs
 
 [Apply prompt engineering with Azure OpenAI Service](https://learn.microsoft.com/en-us/training/modules/apply-prompt-engineering-azure-openai/)

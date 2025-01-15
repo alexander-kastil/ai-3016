@@ -10,4 +10,6 @@
 
 ## Demos
 
-- Deploy the Azure AI Studio Starter template
+- Explain basic concepts of Azure AI Foundry
+
+- Deploy the Azure AI Studio Starter template using Bicep

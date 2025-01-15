@@ -12,17 +12,17 @@ Companion Material for Class Delivery by [Alexander Kastil](https://www.integrat
     - [Docker and WSL Setup](./tooling/08-docker-wsl)
   - [Labs](./labs/)
 
-## Required Cloud Resources
+## Proposed Resources
 
-- [Github User Account](https://github.com/)
+- [Github User Account - optional](https://github.com/)
 
 - Azure Subscription:
 
-  - [Azure Passes](https://www.microsoftazurepass.com/) with [Code](./tooling/05-AzurePass)
+  - [Azure Passes](https://www.microsoftazurepass.com/) with [Code](./tooling/05-azurepass)
   - Paid or MSDN Subscriptions. Please do not use a Production Subscription for Training
   - [Azure Trial Subscription](https://azure.microsoft.com/en-us/free/)
 
-  > Note: Azure Passes can only be used once per e-mail account. Please do not use Azure AD Accounts. A guide on how to use your Azure Pass can be found [here](./tooling/05-AzurePass)
+  > Note: Azure Passes can only be used once per e-mail account. Please do not use Azure AD Accounts. A guide on how to use your Azure Pass can be found [here](./tooling/05-azurepass)
 
 - [Azure AI Foundry Account](https://ai.azure.com/)
 
