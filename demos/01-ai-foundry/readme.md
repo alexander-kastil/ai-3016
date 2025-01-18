@@ -8,8 +8,14 @@
 
 [Role-based access control in Azure AI Foundry portal](https://learn.microsoft.com/en-us/azure/ai-studio/concepts/rbac-ai-studio)
 
+[Azure GenAIOps Solution Accelerator](https://github.com/Azure/GenAIOps)
+
 ## Demos
 
 - Explain basic concepts of Azure AI Foundry
 
-- Deploy the Azure AI Studio Starter template using Bicep
+- Introduce the Azure AI template deployments using Bicep and Azure Developer CLI
+
+  - https://github.com/Azure-Samples/azd-aistudio-starter
+
+  - https://github.com/Azure/GenAIOps-project-template
