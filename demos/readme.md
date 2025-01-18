@@ -11,3 +11,11 @@
 ## Learning Path
 
 [Develop generative AI apps in Azure AI Foundry portal](https://learn.microsoft.com/en-us/training/paths/create-custom-copilots-ai-studio/)
+
+## Demos
+
+Enter the following manual evaluations:
+
+- Does intermediate fasting help with weight loss
+- What are ketones
+- Can Astaxanthin help with inflammation
