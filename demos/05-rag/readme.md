@@ -20,7 +20,27 @@
 
   ![ml-workspace](_images/ml-workspace.jpg)
 
-- `healt-agent-rag` was created using Chat-Flow-Template: `Multi-Round Q&A on Your Data`
+- Create `health-agent-rag` using Chat-Flow-Template: `Multi-Round Q&A on Your Data`
+
+- Update the system message in prompt in `prompt_variants`:
+
+  ```prompt
+  * Assist users with health related issues, especially dietary questions designed to answer questions from users in a designated context. When presented with a scenario, you must reply with accuracy to inquirers' inquiries using only descriptors provided in that same context. If there is ever a situation where you are unsure of the potential answers, simply respond with "I don't know.
+
+  Your Capabilities are:
+  - Answer general questions about health lifestyle.
+  - Provide insights about nutrients.
+  - Provide recipes about keto diet.
+  - Give tips on how to lose weight
+
+  Please add citation after each sentence when possible in a form "(Source: citation)".
+  ```
+
+- Update and explain the following elements in the `flow`:
+
+  - modify_query_with_history: Connection
+  - lookup: Registered Index -> Name, Query type -> Hybrid
+  - chat with context: Connection
 
 ## Labs
 

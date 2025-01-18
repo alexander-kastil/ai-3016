@@ -33,19 +33,18 @@ dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
 Write-Host "VS Code Extensions - 5/6" -ForegroundColor yellow
 
 code --install-extension ms-dotnettools.csharp
-code --install-extension ms-vscode.powershell
 code --install-extension ms-vscode.azurecli
 code --install-extension ms-vscode.azure-account
-code --install-extension ms-azuretools.vscode-azureappservice
 code --install-extension ms-azuretools.vscode-docker
-code --install-extension ms-azuretools.vscode-azurefunctions
 code --install-extension GitHub.vscode-pull-request-github
-code --install-extension redhat.vscode-yaml
-code --install-extension bencoleman.armview
-code --install-extension mdickin.markdown-shortcuts
-code --install-extension mhutchie.git-graph 
-code --install-extension ms-python.python
 code --install-extension alex-pattison.theme-cobalt3
+code --install-extension redhat.vscode-yaml
+code --install-extension mdickin.markdown-shortcuts
+code --install-extension ms-azuretools.vscode-bicep 
+code --install-extension prompt-flow.prompt-flow
+code --install-extension ms-python.python
+code --install-extension ms-toolsai.prompty
+code --install-extension ms-windows-ai-studio.windows-ai-studio
 
 # Install NodeJS
 nvm install 22.3.0

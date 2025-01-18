@@ -1,5 +1,5 @@
 grp=ai-dev
-loc=eastus
+loc=eastus2
 cs=ai-dev-content-safety-$RANDOM
 
 az group create --name $grp --location $loc
@@ -9,7 +9,7 @@ az cognitiveservices account create \
     --resource-group $grp \
     --kind ContentModerator \
     --sku S0 \
-    --location $loc 
+    --location $loc
 
 ## Get the endpoint and key
 key=$(az cognitiveservices account keys list --name $cs --resource-group $grp --query key1 -o tsv)

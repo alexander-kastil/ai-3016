@@ -1,0 +1,165 @@
+id: health_agent
+name: Health Agent
+inputs:
+  chat_history:
+    type: list
+    default:
+      - inputs:
+          chat_input: Hi
+        outputs:
+          chat_output: Hello I am a health agent! How can I assist you today?
+      - inputs:
+          chat_input: Tell me about the benefits of fasting?
+        outputs:
+          chat_output: Fasting offers several health benefits, including Increased human growth hormones (HGH), which can aid in muscle growth and fat loss
+    is_chat_input: false
+    is_chat_history: true
+  chat_input:
+    type: string
+    default: How can I create loose weight?
+    is_chat_input: true
+outputs:
+  chat_output:
+    type: string
+    reference: ${chat_with_context.output}
+    is_chat_output: true
+nodes:
+  - name: modify_query_with_history
+    type: llm
+    source:
+      type: code
+      path: modify_query_with_history.jinja2
+    inputs:
+      deployment_name: gpt-4o-mini
+      temperature: 0
+      top_p: 1
+      max_tokens: 1000
+      response_format:
+        type: text
+      presence_penalty: 0
+      frequency_penalty: 0
+      chat_history: ${inputs.chat_history}
+      chat_input: ${inputs.chat_input}
+    provider: AzureOpenAI
+    connection: aiservices247473517780_aoai
+    api: chat
+    module: promptflow.tools.aoai
+    use_variants: false
+  - name: lookup
+    type: python
+    source:
+      type: package
+      tool: promptflow_vectordb.tool.common_index_lookup.search
+    inputs:
+      mlindex_content: >
+        embeddings:
+          api_base: https://aiservices247473517780.openai.azure.com
+          api_type: azure
+          api_version: 2023-07-01-preview
+          batch_size: '16'
+          connection:
+            id: 
+              /subscriptions/78033352-805c-4acd-af80-f8f95083268d/resourceGroups/rg-ai-dev/providers/Microsoft.MachineLearningServices/workspaces/ai-3016/connections/aiservices247473517780_aoai
+          connection_type: workspace_connection
+          deployment: text-embedding-ada-002
+          dimension: 1536
+          file_format_version: '2'
+          kind: open_ai
+          model: text-embedding-ada-002
+          schema_version: '2'
+        index:
+          api_version: 2024-05-01-preview
+          connection:
+            id: 
+              /subscriptions/78033352-805c-4acd-af80-f8f95083268d/resourceGroups/rg-ai-dev/providers/Microsoft.MachineLearningServices/workspaces/ai-3016/connections/AzureAISearch
+          connection_type: workspace_connection
+          endpoint: https://aisearch247473517780.search.windows.net
+          engine: azure-sdk
+          field_mapping:
+            content: content
+            embedding: contentVector
+            filename: filepath
+            metadata: meta_json_string
+            title: title
+            url: url
+          index: health-books-idx
+          kind: acs
+          semantic_configuration_name: azureml-default
+        self:
+          path: 
+            azureml://subscriptions/78033352-805c-4acd-af80-f8f95083268d/resourcegroups/rg-ai-dev/workspaces/ai-3016/datastores/workspaceblobstore/paths/azureml/2fbf3bb0-c7bb-409a-a66f-835b14ff410f/index/
+          asset_id: 
+            azureml://locations/eastus2/workspaces/d104712c-65ff-4cac-92fb-0b60ad237190/data/health-books-idx/versions/1
+      queries: ${modify_query_with_history.output}
+      query_type: Hybrid (vector + keyword)
+      top_k: 2
+    use_variants: false
+  - name: generate_prompt_context
+    type: python
+    source:
+      type: code
+      path: generate_prompt_context.py
+    inputs:
+      search_result: ${lookup.output}
+    use_variants: false
+  - name: Prompt_variants
+    use_variants: true
+  - name: chat_with_context
+    type: llm
+    source:
+      type: code
+      path: chat_with_context.jinja2
+    inputs:
+      deployment_name: gpt-4o-mini
+      temperature: 0
+      top_p: 1
+      max_tokens: 1000
+      response_format:
+        type: text
+      presence_penalty: 0
+      frequency_penalty: 0
+      prompt_text: ${Prompt_variants.output}
+    provider: AzureOpenAI
+    connection: aiservices247473517780_aoai
+    api: chat
+    module: promptflow.tools.aoai
+    use_variants: false
+node_variants:
+  Prompt_variants:
+    default_variant_id: variant_0
+    variants:
+      variant_0:
+        node:
+          name: Prompt_variants
+          type: prompt
+          source:
+            type: code
+            path: Prompt_variants.jinja2
+          inputs:
+            chat_history: ${inputs.chat_history}
+            chat_input: ${inputs.chat_input}
+            contexts: ${generate_prompt_context.output}
+      variant_1:
+        node:
+          name: Prompt_variants
+          type: prompt
+          source:
+            type: code
+            path: Prompt_variants__variant_1.jinja2
+          inputs:
+            contexts: ${generate_prompt_context.output}
+            chat_history: ${inputs.chat_history}
+            chat_input: ${inputs.chat_input}
+      variant_2:
+        node:
+          name: Prompt_variants
+          type: prompt
+          source:
+            type: code
+            path: Prompt_variants__variant_2.jinja2
+          inputs:
+            contexts: ${generate_prompt_context.output}
+            chat_history: ${inputs.chat_history}
+            chat_input: ${inputs.chat_input}
+environment:
+  python_requirements_txt: requirements.txt
