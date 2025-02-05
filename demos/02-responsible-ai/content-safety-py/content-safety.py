@@ -34,7 +34,9 @@ def analyze_text():
     sexual_result = next(item for item in response.categories_analysis if item.category == TextCategory.SEXUAL)
     violence_result = next(item for item in response.categories_analysis if item.category == TextCategory.VIOLENCE)
 
+    print()
     print("text analysis results:")
+    print()
 
     if hate_result:
         print(f"Hate severity: {hate_result.severity}")
@@ -45,11 +47,11 @@ def analyze_text():
     if violence_result:
         print(f"Violence severity: {violence_result.severity}")
 
-def analyze_image():
+def analyze_image(picture):
     endpoint = os.environ.get('CONTENT_SAFETY_ENDPOINT')
     key = os.environ.get('CONTENT_SAFETY_KEY')
     # Set default image path
-    image_path = os.path.join("sample_data", "woman.jpg")
+    image_path = os.path.join("sample_data", picture)
     
     # Verify image exists
     if not os.path.exists(image_path):
@@ -81,7 +83,9 @@ def analyze_image():
     sexual_result = next(item for item in response.categories_analysis if item.category == ImageCategory.SEXUAL)
     violence_result = next(item for item in response.categories_analysis if item.category == ImageCategory.VIOLENCE)
 
-    print("image analysis results:")
+    print()
+    print("image analysis results: " + picture)
+    print()
 
     if hate_result:
         print(f"Hate severity: {hate_result.severity}")
@@ -94,4 +98,5 @@ def analyze_image():
 
 if __name__ == "__main__":
     analyze_text()
-    analyze_image()
+    analyze_image("woman.jpg")
+    analyze_image("violence.jpg")

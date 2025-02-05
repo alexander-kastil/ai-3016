@@ -10,6 +10,8 @@
 
 [Azure GenAIOps Solution Accelerator](https://github.com/Azure/GenAIOps)
 
+[Build with AI - Azure AI Foundry Bicep Templates](https://azure.github.io/ai-app-templates/)
+
 ## Demos
 
 - Explain basic concepts of Azure AI Foundry

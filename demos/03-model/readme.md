@@ -10,6 +10,8 @@
 
 [Prompty - VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.prompty)
 
+[Global standard model availability and features](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models?tabs=global-standard%2Cstandard-chat-completions#global-standard-model-availability)
+
 ## Demos
 
 - Show LLM Deployment in Azure AI Foundry
