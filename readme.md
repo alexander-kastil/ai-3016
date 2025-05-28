@@ -1,16 +1,16 @@
 # Develop Generative AI apps in Azure AI Foundry Portal
 
-Companion Material for Class Delivery by [Alexander Kastil](https://www.integrations.at/kontakt-impressum.aspx) containing:
+Companion Material for Class Delivery by [Alexander Kastil](https://www.linkedin.com/in/alexander-kastil-3bb26511a/) containing:
 
-  - [Instructor Demos](./demos)
-  - [Requirements / Tooling](./tooling)
-    - [Register Azure Pass](./tooling/05-azurepass)
-    - [Git & GitHub Basics](./tooling/01-git)
-    - [Visual Studio Code Intro](./tooling/02-vscode)
-    - [Document Repos using Markdown](./tooling/03-markdown)
-    - [Using Azure CLI & Cloud Shell](./tooling/04-cli)
-    - [Docker and WSL Setup](./tooling/08-docker-wsl)
-  - [Labs](./labs/)
+- [Instructor Demos](./demos)
+- [Requirements / Tooling](./tooling)
+  - [Register Azure Pass](./tooling/05-azurepass)
+  - [Git & GitHub Basics](./tooling/01-git)
+  - [Visual Studio Code Intro](./tooling/02-vscode)
+  - [Document Repos using Markdown](./tooling/03-markdown)
+  - [Using Azure CLI & Cloud Shell](./tooling/04-cli)
+  - [Docker and WSL Setup](./tooling/08-docker-wsl)
+- [Labs](./labs/)
 
 ## Proposed Resources
 
